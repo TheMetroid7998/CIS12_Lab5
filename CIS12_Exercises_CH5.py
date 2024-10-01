@@ -12,11 +12,11 @@ def hr_calc():
     return time_h
 
 def min_calc():
-    time_m = int((((now % 31536000) - (275 * 86400)) % 86400)) # TODO: Why is it not rounding
+    time_m = round((((now % 31536000) - (275 * 86400)) % 86400), 2) # TODO: Why is it not rounding
     return time_m
 
 print(f"It has been {now//(60*60*24*365)} years since 1970.")
-print(f"The time is now {hr_calc()}:{min_calc()} on October 01, 2024") # TODO: what.
+print(f"The time is now {hr_calc()}:{min_calc()} on October 01, 2024")
 
 """Exercise 5.14.3"""
 def is_triangle(s1, s2, s3):
@@ -130,10 +130,21 @@ def main():
     # Define the vertices of the initial triangle
     points = [(-200, -150), (0, 200), (200, -150)]
 
-    # Draw the Sierpiński triangle of order 4
+    # Draw the Sierpiński triangle of order n
     sierpinski_triangle(4, points)
 
     turtle.done()
 
 if __name__ == "__main__":
     main()
+
+
+def cheese(num):
+    if num % 3 == 0 and num % 5 == 0:
+        return True
+    else:
+        return False
+
+cheese(10)
+#print(f"{cheese(10)}")
+cheese(15)
