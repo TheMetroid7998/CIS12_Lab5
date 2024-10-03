@@ -14,8 +14,7 @@ def is_valid_ip(ip):
         raise Exception("This IP address is not valid: IP addresses can only be 4 discrete numbers in binary or decimal format.")
 
     for item in split_ip:
-        if is_valid(item):
-            return True #, print("Valid IP")
+        is_valid(item)
 
 def decimal_to_binary(n):
     """Performs basic checks before passing the decimal number to a helper function."""
@@ -77,5 +76,5 @@ def ip_convert(ip):
         print(f"The binary representation of the decimal IP address {ip} is {ip_to_binary(ip)}")
         return ip_to_binary(ip)
 
-#ip_convert('192.168.1.1')
-#ip_convert('11000000.10101000.00000001.00000001')
+ip_convert('192.168.1.1')
+ip_convert('11000000.10101000.00000001.00000001')

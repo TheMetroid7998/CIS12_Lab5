@@ -1,7 +1,8 @@
 import sys
+
 def is_valid(part):
     """Checks if the input value is a valid integer between 0 and 255 and if the value doesn't start with 0."""
-    if 0 <= float(part) <= 255 and part == str(int(part)):
+    if 0 <= int(part) <= 255 and part == str(int(part)): # was originally float(part). why?
         return True
     else:
         raise Exception(f"""
@@ -19,8 +20,7 @@ def is_valid_ip(ip):
         raise Exception("This IP address is not valid: IP addresses can only be 4 discrete numbers in binary or decimal format.")
 
     for item in split_ip:
-        if is_valid(item):
-            return True #, print("Valid IP")
+        is_valid(item)
 
 def decimal_to_binary(n):
     """Performs basic checks before passing the decimal number to a helper function."""
