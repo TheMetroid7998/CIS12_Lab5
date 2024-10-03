@@ -41,7 +41,7 @@ def is_valid_ip(ip):
         if not is_valid(item):
             print("This IP Address is not valid: IP Address values are invalid.")
             return False
-    print("This IP Address is valid.")
+    #print("This IP Address is valid.")
     return True
 
 def decimal_to_binary(n):
@@ -98,12 +98,11 @@ def binary_to_ip(bin_ip):
 
 def ip_convert(ip):
     if all(char in '01.' for char in str(ip)):
+        print(f"The decimal representation of the binary IP address {ip} is {binary_to_ip(ip)}")
         return binary_to_ip(ip)
     else:
+        print(f"The binary representation of the decimal IP address {ip} is {ip_to_binary(ip)}")
         return ip_to_binary(ip)
 
-print(ip_convert('192.168.1.1'))
-print(ip_convert('11000000.10101000.00000001.00000001'))
-
-#print(ip_to_binary('192.168.1.1'))
-#print(binary_to_ip('11000000.10101000.00000001.00000001'))
+ip_convert('192.168.1.1')
+ip_convert('11000000.10101000.00000001.00000001')
