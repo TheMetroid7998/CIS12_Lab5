@@ -84,6 +84,7 @@ def ip_convert_old(ip):
         return ip_to_binary(ip)
 
 def manual_end():
+    """Collects input to determine whether to convert another IP address."""
     desire = input("Convert another IP address?\n").upper().strip()
     if desire == 'Y':
         ip_convert()
@@ -94,9 +95,11 @@ def manual_end():
         manual_end()
 
 def ip_input():
+    """Takes the initial input and passes to another function."""
     return str(input("Enter an IP address in binary or decimal format: \n").strip())
 
 def ip_convert():
+    """Takes input, determines if it is decimal or binary, and converts it appropriately."""
     ip = ip_input()
     try:
         if all(char in '01.' for char in str(ip)): # This prevents dedicated error code from running (bad).
