@@ -102,7 +102,7 @@ def ip_convert():
     """Takes input, determines if it is decimal or binary, and converts it appropriately."""
     ip = ip_input()
     try:
-        if all(char in '01.' for char in str(ip)): # This prevents dedicated error code from running (bad).
+        if all(char in '01.' for char in str(ip)) and len(ip) == 35:
             print(f"The decimal representation of the binary IP address {ip} is {binary_to_ip(ip)}")
             return binary_to_ip(ip)
         else:
